@@ -1,7 +1,8 @@
 // Import React and Component
 import React from "react";
 import { StatusBar } from "react-native";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import { FAB } from "@rneui/themed";
 
 const SettingsScreen = () => {
   return (
@@ -46,8 +47,29 @@ const SettingsScreen = () => {
           www.aboutreact.com
         </Text>
       </View>
+      <FAB
+        visible={true}
+        size="large"
+        placement="right"
+        color="skyblue"
+        style={[styles.shadowProp, styles.floatingButton]}
+        icon={{
+          name: "contact-support",
+          color: "#FFFFFF",
+          size: 29,
+        }}
+        loadingProps={{ animating: true }}
+        loadingStyle={{}}
+        onPress={() => alert("click")}
+      />
     </SafeAreaView>
   );
 };
 
 export default SettingsScreen;
+
+const styles = StyleSheet.create({
+  floatingButton: {
+    padding: 0,
+  },
+});

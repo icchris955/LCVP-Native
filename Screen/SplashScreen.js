@@ -1,6 +1,13 @@
 // Import React and Component
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, View, StyleSheet, Image } from "react-native";
+import {
+  ActivityIndicator,
+  View,
+  StyleSheet,
+  Image,
+  StatusBar,
+  SafeView,
+} from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -24,13 +31,14 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <Image
-        source={require("../assets/images/aboutreact.png")}
-        style={{ width: "90%", resizeMode: "contain", margin: 30 }}
+        source={require("../assets/splash.png")}
+        style={{ width: "60%", resizeMode: "contain", margin: 10 }}
       />
       <ActivityIndicator
         animating={animating}
-        color="#000000"
+        color="#00ff00"
         size="large"
         style={styles.activityIndicator}
       />
@@ -43,12 +51,14 @@ export default SplashScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     backgroundColor: "#FFFFFF",
   },
   activityIndicator: {
     alignItems: "center",
     height: 80,
+    marginVertical: 100,
   },
 });

@@ -4,16 +4,14 @@
     "slug": "lcvp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/lcvp.svg",
     "userInterfaceStyle": "light",
     "jsEngine": "hermes",
     "updates": {
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/404f9bcb-13c5-4f6f-9824-9d45148b1185"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "jsEngine": "jsc",

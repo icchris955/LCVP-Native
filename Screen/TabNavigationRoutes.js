@@ -38,6 +38,9 @@ const TabNavigationRoutes = () => {
         tabBarActiveTintColor: "#000000",
         tabBarInactiveTintColor: "gray",
         headerShown: false,
+        headerStyle: {
+          color: 'white'
+        },
         animationEnabled: true,
         cardStyle: { backgroundColor: "transparent" },
       })}
