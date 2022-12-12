@@ -1,3 +1,7 @@
+/**
+ * Index Card that show 
+ */
+
 import * as React from "react";
 import { Card } from "@rneui/base";
 import { View, Button, Text, StyleSheet } from "react-native";

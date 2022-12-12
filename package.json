@@ -25,6 +25,7 @@
     "react-hook-form": "^7.40.0",
     "react-native": "0.70.5",
     "react-native-elements": "^3.4.2",
+    "react-native-linear-gradient": "^2.6.2",
     "yup": "^0.32.11"
   },
   "devDependencies": {

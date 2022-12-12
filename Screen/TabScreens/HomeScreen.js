@@ -1,6 +1,6 @@
 // Import React and Component
 import React from "react";
-import { Input } from "@rneui/base";
+import { Button, Input } from "@rneui/base";
 
 //Import SetupForm
 import SetupForm from "../../Components/Forms/SetupForm";
@@ -19,9 +19,9 @@ import {
 } from "react-native";
 import { SignUpForm } from "../../Components/Forms/SignUpForm";
 
-const HomeScreen = ({ navigate }) => {
+const HomeScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, justifyContent: "space-between" }}>
       <ScrollView
         style={styles.scrollView}
         decelerationRate="fast"
@@ -32,6 +32,7 @@ const HomeScreen = ({ navigate }) => {
       >
         <ProfileStatus />
         <Indulge />
+
         <LatestValidation />
       </ScrollView>
     </SafeAreaView>
@@ -49,7 +50,6 @@ const styles = StyleSheet.create({
   scrollView: {
     flex: 1,
     padding: 10,
-    height: "100%",
   },
   shadowProp: {
     shadowColor: "#000000",
