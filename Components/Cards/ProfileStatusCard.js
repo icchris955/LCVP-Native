@@ -9,7 +9,9 @@ export default ProfileStatus = (props) => {
       containerStyle={[styles.shadowProp, styles.card]}
       wrapperStyle={styles.card}
     >
-      <Card.Title>Profile Status</Card.Title>
+      <Card.Title style={{ fontSize: 18, padding: 0, marginBottom: 10 }}>
+        Profile Status
+      </Card.Title>
 
       <Card.Divider />
       <View

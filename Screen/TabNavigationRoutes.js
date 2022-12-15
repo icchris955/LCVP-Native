@@ -27,7 +27,7 @@ const TabNavigationRoutes = () => {
             iconName = focused ? "grid" : "grid-outline";
           } else if (route.name === "Account") {
             iconName = focused ? "person" : "person-outline";
-          } else if (route.name === "Search") {
+          } else if (route.name === "Browse") {
             iconName = focused ? "search" : "search-outline";
           } else if (route.name === "To-Do") {
             iconName = focused ? "basket" : "basket-outline";
@@ -39,7 +39,7 @@ const TabNavigationRoutes = () => {
         tabBarInactiveTintColor: "gray",
         headerShown: false,
         headerStyle: {
-          color: 'white'
+          color: "white",
         },
         animationEnabled: true,
         cardStyle: { backgroundColor: "transparent" },
@@ -54,7 +54,7 @@ const TabNavigationRoutes = () => {
           tabBarBadgeStyle: { backgroundColor: "red", color: "#FFFFFF" },
         }}
       />
-      <Tab.Screen name="Search" component={SearchScreen} />
+      <Tab.Screen name="Browse" component={SearchScreen} />
       <Tab.Screen name="Account" component={SettingScreenStack} />
     </Tab.Navigator>
   );

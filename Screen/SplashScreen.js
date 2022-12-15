@@ -31,10 +31,10 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
+      <StatusBar barStyle="dark-content" backgroundColor="#000000" />
       <Image
-        source={require("../assets/splash.png")}
-        style={{ width: "80%", resizeMode: "contain" }}
+        source={require("../assets/splash1.png")}
+        style={{ width: "40%", resizeMode: "contain" }}
       />
       <ActivityIndicator
         animating={animating}
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
   },
   activityIndicator: {
     alignItems: "center",
-    height: "50%",
-    marginVertical: 100,
+    height: "30%",
   },
 });

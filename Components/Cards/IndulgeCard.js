@@ -1,16 +1,68 @@
 import * as React from "react";
 import { Card } from "@rneui/base";
-import { StyleSheet } from "react-native";
-import { ListItem, Avatar } from "@rneui/themed";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { LinearProgress, ListItem, Icon, Button } from "@rneui/themed";
 
-export default Indulge = (props) => {
+const Listelem = ({ label, progress, icon, variant }) => {
+  return (
+    <ListItem.Swipeable
+      leftContent={(reset) => (
+        <Button
+          title="Info"
+          onPress={() => reset()}
+          icon={{ name: "info", color: "white" }}
+          buttonStyle={{ minHeight: "100%" }}
+        />
+      )}
+      rightContent={(reset) => (
+        <Button
+          title="Ignore"
+          onPress={() => reset()}
+          icon={{ name: "delete", color: "white" }}
+          buttonStyle={{ minHeight: "100%", backgroundColor: "red" }}
+        />
+      )}
+      containerStyle={styles.listItem}
+    >
+      <Icon name={icon} size={20} color="#000000" raised />
+      <ListItem.Content>
+        <ListItem.Title>{label}</ListItem.Title>
+      </ListItem.Content>
+      <LinearProgress
+        style={{ marginVertical: 10, width: 70, color: "black" }}
+        value={progress}
+        color="#000000"
+        variant={variant}
+      />
+    </ListItem.Swipeable>
+  );
+};
+
+export default Indulge = () => {
   return (
     <Card
       containerStyle={[styles.shadowProp, styles.card]}
       wrapperStyle={styles.card}
     >
-      <Card.Title>Indulge</Card.Title>
+      <Card.Title style={{ fontSize: 18, padding: 0, marginBottom: 10 }}>
+        Indulge (Recommended)
+      </Card.Title>
       <Card.Divider />
+      <ScrollView style={styles.CardList}>
+        <Listelem
+          label="Mortgage "
+          progress={1}
+          icon="done-outline"
+          variant="determinate"
+        />
+        <Listelem
+          label="Construction Loan "
+          icon="flaky"
+          progress={0}
+          variant="indeterminate"
+        />
+        <Listelem label="Home Equity " progress={1} icon="check" />
+      </ScrollView>
     </Card>
   );
 };
@@ -19,7 +71,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 18,
     fontWeight: "600",
-    marginBottom: 13,
   },
   card: {
     backgroundColor: "white",
@@ -32,5 +83,11 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 5, height: 8 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
+  },
+  listItem: {
+    paddingTop: 0,
+  },
+  CardList: {
+    height: 200,
   },
 });

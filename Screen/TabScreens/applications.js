@@ -6,33 +6,96 @@ import {
   TouchableOpacity,
   Button,
   StatusBar,
+  SafeAreaView,
+  ScrollView,
 } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { LinearProgress, ListItem, Icon } from "@rneui/themed";
 
-const CartItem = ({ icon }) => {
+const CartItem = ({ icon, label }) => {
   return (
-    <View style={styles.MainContainer}>
+    <TouchableOpacity style={styles.MainContainer}>
       <TouchableOpacity>
-        <Icon name={icon} size={100} color="#900" />
-        <Text>Service Title</Text>
+        <Icon name={icon} size={70} color="#000000" />
       </TouchableOpacity>
-      <View>
-        <Text>Delivery Time</Text>
-        <Text>Service Fee</Text>
-        <Text>Appointment</Text>
+      <View
+        style={[
+          styles.shadowProp,
+          {
+            width: "100%",
+            borderRadius: 15,
+            borderRadius: 20,
+            borderColor: "#FFFFFF",
+          },
+        ]}
+      >
+        <ListItem.Title
+          style={{ alignSelf: "center", fontWeight: "bold", fontSize: 15 }}
+        >
+          {label}
+        </ListItem.Title>
+        <ListItem
+          containerStyle={{
+            padding: 5,
+          }}
+        >
+          <Icon name="star" size={20} />
+          <ListItem.Content>
+            <ListItem.Title>20%</ListItem.Title>
+          </ListItem.Content>
+        </ListItem>
+        <ListItem containerStyle={{ padding: 5 }}>
+          <Icon name="schedule" size={20} />
+          <ListItem.Content>
+            <ListItem.Title>5 Years</ListItem.Title>
+          </ListItem.Content>
+        </ListItem>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const CartScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <SafeAreaView>
       <StatusBar barStyle="dark-content" backgroundColor="#000000" />
-      <Text>Cart!</Text>
-      <CartItem icon={"car"} />
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: "bold",
+          alignSelf: "center",
+          marginVertical: 10,
+        }}
+      >
+        Requests
+      </Text>
+      <ScrollView
+        horizontal={true}
+        contentContainerStyle={{
+          flex: 1,
+          flexDirection: "row",
+          alignItems: "space-around",
+          alignContent: "space-between",
+          flexWrap: "wrap",
+        }}
+      >
+        <CartItem icon={"house"} label="Morgage" />
+        <CartItem icon={"money"} label="Personal Overdraft" />
+      </ScrollView>
+      <Text
+        style={{
+          fontSize: 20,
+          textAlign: "center",
+          marginBottom: 16,
+        }}
+      >
+        Inquiry Screen
+        {"\n\n"}
+        Coming Soon
+        {"\n\n"}
+        Includes Application Interactive Application Form
+      </Text>
       <Button title="Go Home" onPress={() => navigation.navigate("Home")} />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -42,17 +105,21 @@ const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5F9EE",
     borderWidth: 0.5,
     borderColor: "#051336",
-    marginBottom: 10,
-    width: 150,
-    marginHorizontal: 5,
+    marginHorizontal: 20,
+    width: 160,
     padding: 2,
     borderRadius: 3,
     shadowOffset: {
       width: -2,
       height: -1,
     },
+  },
+  shadowProp: {
+    shadowColor: "#000000",
+    shadowOffset: { width: 5, height: 8 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 });

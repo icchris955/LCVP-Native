@@ -23,9 +23,11 @@ const SettingsScreen = () => {
               marginBottom: 16,
             }}
           >
-            Example of Splash, Login and Sign Up in React Native
+            Settings Screen
             {"\n\n"}
-            This is the Settings Screen
+            Coming Soon
+            {"\n\n"}
+            Includes Personal Configurations
           </Text>
         </View>
         <Text
@@ -35,7 +37,7 @@ const SettingsScreen = () => {
             color: "grey",
           }}
         >
-          Splash, Login and Register Example{"\n"}React Native
+          InProgress
         </Text>
         <Text
           style={{
@@ -43,9 +45,7 @@ const SettingsScreen = () => {
             textAlign: "center",
             color: "grey",
           }}
-        >
-          www.aboutreact.com
-        </Text>
+        ></Text>
       </View>
       <FAB
         visible={true}
