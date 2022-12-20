@@ -55,12 +55,7 @@ export default Indulge = () => {
           icon="done-outline"
           variant="determinate"
         />
-        <Listelem
-          label="Construction Loan "
-          icon="flaky"
-          progress={0}
-          variant="indeterminate"
-        />
+        <Listelem label="Construction Loan " icon="flaky" progress={0} />
         <Listelem label="Home Equity " progress={1} icon="check" />
       </ScrollView>
     </Card>

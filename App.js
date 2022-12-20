@@ -23,7 +23,9 @@ const Auth = () => {
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name="RegisterScreen"
@@ -33,10 +35,12 @@ const Auth = () => {
           headerStyle: {
             backgroundColor: "#000000", //Set Header color
           },
-          headerTintColor: "#FFFFF", //Set Header text color
+          headerTintColor: "#FFFFFF", //Set Header text color
           headerTitleStyle: {
             fontWeight: "bold", //Set Header text style
+            textAlign: "center",
           },
+          headerBackTitleVisible: false,
         }}
       />
     </Stack.Navigator>
@@ -64,7 +68,7 @@ const App = () => {
         />
         {/* Navigation Drawer as a landing page */}
         <Stack.Screen
-          name="DrawerNavigationRoutes"
+          name="TabNavigationRoutes"
           component={TabNavigationRoutes}
           // Hiding header for Navigation Drawer as we will use our custom header
           options={{ headerShown: false }}

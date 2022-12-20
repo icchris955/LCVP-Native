@@ -10,6 +10,7 @@ import {
   Keyboard,
   TouchableOpacity,
   ScrollView,
+  StatusBar,
 } from "react-native";
 
 import Loader from "../../lcvp/Components/Loader";
@@ -116,6 +117,7 @@ const RegisterScreen = (props) => {
   return (
     <View style={{ flex: 1, backgroundColor: "#FFFFFF" }}>
       <Loader loading={loading} />
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
@@ -125,7 +127,7 @@ const RegisterScreen = (props) => {
       >
         <View style={{ alignItems: "center" }}>
           <Image
-            source={require("../assets/images/aboutreact.png")}
+            source={require("../assets/splash1.png")}
             style={{
               width: "50%",
               height: 100,

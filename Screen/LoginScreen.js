@@ -10,6 +10,7 @@ import {
   Keyboard,
   TouchableOpacity,
   KeyboardAvoidingView,
+  StatusBar,
 } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -77,6 +78,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.mainBody}>
       <Loader loading={loading} />
+      <StatusBar barStyle="light-content" backgroundColor="#000000" />
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
@@ -89,10 +91,10 @@ const LoginScreen = ({ navigation }) => {
           <KeyboardAvoidingView enabled>
             <View style={{ alignItems: "center" }}>
               <Image
-                source={require("../assets/images/aboutreact.png")}
+                source={require("../assets/splash1.png")}
                 style={{
-                  width: "50%",
-                  height: 100,
+                  width: "100%",
+                  height: 150,
                   resizeMode: "contain",
                   margin: 30,
                 }}
@@ -143,7 +145,7 @@ const LoginScreen = ({ navigation }) => {
               style={styles.registerTextStyle}
               onPress={() => navigation.navigate("RegisterScreen")}
             >
-              New Here-Register
+              New Here - Create New Account
             </Text>
           </KeyboardAvoidingView>
         </View>
@@ -199,6 +201,7 @@ const styles = StyleSheet.create({
   registerTextStyle: {
     color: "#000000",
     textAlign: "center",
+
     fontWeight: "bold",
     fontSize: 14,
     alignSelf: "center",
