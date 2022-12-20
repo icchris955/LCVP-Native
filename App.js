@@ -11,7 +11,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import SplashScreen from "./Screen/SplashScreen";
 import LoginScreen from "./Screen/LoginScreen";
 import RegisterScreen from "./Screen/RegisterScreen";
-import DrawerNavigationRoutes from "./Screen/DrawerNavigationRoutes";
 import TabNavigationRoutes from "./Screen/TabNavigationRoutes";
 
 const Stack = createStackNavigator();

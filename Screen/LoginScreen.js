@@ -10,7 +10,6 @@ import {
   Keyboard,
   TouchableOpacity,
   KeyboardAvoidingView,
-  StatusBar,
 } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -78,7 +77,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.mainBody}>
       <Loader loading={loading} />
-      <StatusBar barStyle="light-content" backgroundColor="#000000" />
+
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{

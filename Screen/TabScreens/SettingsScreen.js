@@ -1,6 +1,6 @@
 // Import React and Component
 import React from "react";
-import { StatusBar } from "react-native";
+
 import {
   View,
   Text,
@@ -104,7 +104,7 @@ const SettingsScreen = () => {
         flex: 1,
       }}
     >
-      <StatusBar barStyle="dark-content" backgroundColor="#000000" />
+
       <View
         style={{
           flex: 1,

@@ -5,7 +5,6 @@ import {
   View,
   StyleSheet,
   Image,
-  StatusBar,
   SafeView,
 } from "react-native";
 
@@ -28,8 +27,7 @@ const SplashScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#000000" />
+    <SafeView style={styles.container}>
       <Image
         source={require("../assets/splash1.png")}
         style={{ width: "40%", resizeMode: "contain" }}
@@ -40,7 +38,7 @@ const SplashScreen = ({ navigation }) => {
         size="large"
         style={styles.activityIndicator}
       />
-    </View>
+    </SafeView>
   );
 };
 

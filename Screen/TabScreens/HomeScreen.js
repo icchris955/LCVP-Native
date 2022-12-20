@@ -10,13 +10,12 @@ import Indulge from "../../Components/Cards/IndulgeCard";
 import LatestValidation from "../../Components/Cards/LatestValidationCard";
 
 import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
-import { StatusBar } from "expo-status-bar";
+
 import { SignUpForm } from "../../Components/Forms/SignUpForm";
 
 const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: "space-between" }}>
-      <StatusBar style="light" />
       <ScrollView
         style={styles.scrollView}
         decelerationRate="fast"
