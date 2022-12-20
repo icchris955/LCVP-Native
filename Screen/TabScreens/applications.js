@@ -8,15 +8,21 @@ import {
   StatusBar,
   SafeAreaView,
   ScrollView,
+  Pressable,
 } from "react-native";
 import { LinearProgress, ListItem, Icon } from "@rneui/themed";
+import TouchableScale from "react-native-touchable-scale";
 
 const CartItem = ({ icon, label }) => {
   return (
-    <TouchableOpacity style={styles.MainContainer}>
-      <TouchableOpacity>
-        <Icon name={icon} size={70} color="#000000" />
-      </TouchableOpacity>
+    <TouchableScale
+      style={styles.MainContainer}
+      activeScale={0.9}
+      friction={50} //
+      tension={100}
+    >
+      <Icon name={icon} size={70} color="#000000" />
+
       <View
         style={[
           styles.shadowProp,
@@ -50,7 +56,7 @@ const CartItem = ({ icon, label }) => {
           </ListItem.Content>
         </ListItem>
       </View>
-    </TouchableOpacity>
+    </TouchableScale>
   );
 };
 

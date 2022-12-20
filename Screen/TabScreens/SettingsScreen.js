@@ -8,7 +8,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import { FAB, ListItem, Avatar, Icon } from "@rneui/themed";
+import { FAB, ListItem, Avatar, Icon, Button } from "@rneui/themed";
 import TouchableScale from "react-native-touchable-scale";
 import LinearGradient from "react-native-linear-gradient";
 
@@ -104,7 +104,6 @@ const SettingsScreen = () => {
         flex: 1,
       }}
     >
-
       <View
         style={{
           flex: 1,
@@ -123,6 +122,29 @@ const SettingsScreen = () => {
           <SettingsList />
         </View>
       </View>
+      <Button
+        buttonStyle={{
+          backgroundColor: "black",
+          borderWidth: 2,
+          borderColor: "white",
+          borderRadius: 30,
+          justifyContent: "center",
+        }}
+        containerStyle={{
+          width: 150,
+          marginHorizontal: 50,
+          marginVertical: 10,
+          alignSelf: "center",
+        }}
+        titleStyle={{ fontWeight: "bold" }}
+      >
+        <Icon
+          name="exit-to-app"
+          color="white"
+          style={{ alignSelf: "flex-start" }}
+        />
+        Sign Out
+      </Button>
       <Text
         style={{
           fontSize: 18,

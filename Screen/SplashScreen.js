@@ -5,7 +5,7 @@ import {
   View,
   StyleSheet,
   Image,
-  SafeView,
+  SafeAreaView,
 } from "react-native";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -27,7 +27,7 @@ const SplashScreen = ({ navigation }) => {
   }, []);
 
   return (
-    <SafeView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image
         source={require("../assets/splash1.png")}
         style={{ width: "40%", resizeMode: "contain" }}
@@ -38,7 +38,7 @@ const SplashScreen = ({ navigation }) => {
         size="large"
         style={styles.activityIndicator}
       />
-    </SafeView>
+    </SafeAreaView>
   );
 };
 
