@@ -33,12 +33,12 @@ export default ProfileStatus = (props) => {
             size={80}
             rounded
             source={{
-              uri: "https://avatars0.githubusercontent.com/u/32242596?s=460&u=1ea285743fc4b083f95d6ee0be2e7bb8dcfc676e&v=4",
+              uri: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=100",
             }}
           >
             <Avatar.Accessory size={23} />
           </Avatar>
-          <Text style={{ marginTop: 15 }}>Pranshu Chittora</Text>
+          <Text style={{ marginTop: 15 }}>Chris Jackson</Text>
         </View>
         <View styles={{}}>
           <Chip
@@ -64,7 +64,7 @@ export default ProfileStatus = (props) => {
             containerStyle={{ marginVertical: 5 }}
           />
           <Chip
-            title="Secured"
+            title="Insured"
             color="#000000"
             icon={{
               name: "shield",

@@ -29,8 +29,8 @@ const TabNavigationRoutes = () => {
             iconName = focused ? "person" : "person-outline";
           } else if (route.name === "Browse") {
             iconName = focused ? "search" : "search-outline";
-          } else if (route.name === "To-Do") {
-            iconName = focused ? "basket" : "basket-outline";
+          } else if (route.name === "Credit") {
+            iconName = focused ? "card" : "card-outline";
           }
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -47,7 +47,7 @@ const TabNavigationRoutes = () => {
     >
       <Tab.Screen name="Home" component={HomeScreenStack} />
       <Tab.Screen
-        name="To-Do"
+        name="Credit"
         component={CartScreen}
         options={{
           tabBarBadge: 3,

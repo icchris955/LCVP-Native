@@ -52,11 +52,11 @@ export default Indulge = () => {
         <Listelem
           label="Mortgage "
           progress={1}
-          icon="done-outline"
+          icon="home-work"
           variant="determinate"
         />
-        <Listelem label="Construction Loan " icon="flaky" progress={0} />
-        <Listelem label="Home Equity " progress={1} icon="check" />
+        <Listelem label="Construction Loan " icon="foundation" progress={0} />
+        <Listelem label="Home Equity " progress={1} icon="local-mall" />
       </ScrollView>
     </Card>
   );
@@ -81,8 +81,10 @@ const styles = StyleSheet.create({
   },
   listItem: {
     paddingTop: 0,
+    marginVertical: 0,
+    height: 60,
   },
   CardList: {
-    height: 200,
+    height: 170,
   },
 });

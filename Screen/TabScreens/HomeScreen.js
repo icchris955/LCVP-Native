@@ -11,11 +11,9 @@ import LatestValidation from "../../Components/Cards/LatestValidationCard";
 
 import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 
-import { SignUpForm } from "../../Components/Forms/SignUpForm";
-
 const HomeScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: "space-between" }}>
+    <View style={{ flex: 1 }}>
       <ScrollView
         style={styles.scrollView}
         decelerationRate="fast"
@@ -29,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
 
         <LatestValidation />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -39,11 +37,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
   },
   scrollView: {
     flex: 1,
-    padding: 10,
+    padding: 15,
   },
   shadowProp: {
     shadowColor: "#000000",
