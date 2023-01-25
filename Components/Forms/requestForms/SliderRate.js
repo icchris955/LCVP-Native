@@ -4,7 +4,7 @@ import { Slider, Text, Icon } from "@rneui/themed";
 
 const value = null;
 
-const Sliders = () => {
+const SliderRate = () => {
   const [value, setValue] = useState(0);
   const interpolate = (start, end) => {
     let k = (value - 0) / 10; // 0 =>min  && 10 => MAX
@@ -20,13 +20,13 @@ const Sliders = () => {
 
   return (
     <>
-      <Text style={styles.subHeader}>Payment Period in Months: {value}</Text>
+      <Text style={styles.subHeader}>Rate: {value} %</Text>
 
       <View style={[styles.contentView]}>
         <Slider
           value={value}
           onValueChange={setValue}
-          maximumValue={120}
+          maximumValue={30}
           minimumValue={0}
           step={1}
           allowTouchTrack
@@ -65,5 +65,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Sliders;
-export { value };
+export default SliderRate;

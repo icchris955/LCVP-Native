@@ -78,7 +78,7 @@ const CartScreen = ({ navigation }) => {
           marginBottom: 10,
         }}
       >
-        Requests
+        Recently Reviewed
       </Text>
       <ScrollView
         horizontal={true}

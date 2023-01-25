@@ -10,9 +10,11 @@ import {
   SelectList,
   MultipleSelectList,
 } from "react-native-dropdown-select-list";
+import { Dialog, Icon, Input } from "@rneui/themed";
 
-import { Icon, Input } from "@rneui/themed";
 import Sliders from "./Slider";
+import SliderRate from "./SliderRate";
+import RequestTable from "./RequestTable";
 import Chips from "./RateChip";
 
 function RequestForm() {
@@ -21,18 +23,22 @@ function RequestForm() {
   const input = React.createRef();
 
   const data = [
-    { key: "1", value: "Home Loan", disabled: true },
-    { key: "2", value: "Appliances" },
-    { key: "3", value: "Cameras" },
-    { key: "4", value: "Computers", disabled: true },
-    { key: "5", value: "Vegetables" },
-    { key: "6", value: "Diary Products" },
-    { key: "7", value: "Drinks" },
+    { key: "1", value: "Home Equity" },
+    { key: "2", value: "Mortgage" },
+    { key: "3", value: "School Fees" },
+    { key: "4", value: "Car Loan" },
+    { key: "5", value: "Personal Overdraft" },
+    { key: "6", value: "Renovation Loan" },
+    { key: "7", value: "Construction Loan", disabled: true },
   ];
   const LoanCat = [
     { key: 1, value: "Business Loan" },
     { key: 2, value: "Personal Loan" },
   ];
+  const [visible1, setVisible1] = useState(false);
+  const toggleDialog1 = () => {
+    setVisible1(!visible1);
+  };
   return (
     <View>
       <Text
@@ -67,21 +73,16 @@ function RequestForm() {
       />
       <Input
         placeholder="Loan Amount"
-        focus
+        keyboardAppearance="dark"
+        inputMode="Numeric"
         shake
         inputContainerStyle={styles.input}
         containerStyle={styles.inputContainer}
       />
       <Sliders />
-      <Text
-        style={{
-          fontSize: 20,
-          fontWeight: "bold",
-        }}
-      >
-        Rate:
-      </Text>
-      <Text
+      <SliderRate />
+      <RequestTable />
+      {/* <Text
         style={{
           fontSize: 20,
           fontWeight: "bold",
@@ -104,10 +105,21 @@ function RequestForm() {
         }}
       >
         Total Payments
-      </Text>
-      <TouchableOpacity style={styles.button}>
+      </Text> */}
+      <TouchableOpacity style={styles.button} onPress={toggleDialog1}>
         <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
+      <Dialog isVisible={visible1} onBackdropPress={toggleDialog1}>
+        <Dialog.Title
+          title=""
+          titleStyle={{ textAlign: "center", color: "green" }}
+          overlayStyle={{ borderRadius: 50, backgroundColor: "green" }}
+        />
+        <Icon name="done" type="material" color="green" size={100} />
+        <Text style={{ color: "green", textAlign: "center" }}>
+          Submitted Successfuly
+        </Text>
+      </Dialog>
     </View>
   );
 }
