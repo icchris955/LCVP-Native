@@ -6,18 +6,19 @@ import {
   TouchableOpacity,
   Text,
 } from "react-native";
+
 import {
   SelectList,
   MultipleSelectList,
 } from "react-native-dropdown-select-list";
-import { Dialog, Icon, Input } from "@rneui/themed";
+import { Dialog, Icon } from "@rneui/themed";
 
 import Sliders from "./Slider";
 import SliderRate from "./SliderRate";
 import RequestTable from "./RequestTable";
 import Chips from "./RateChip";
 
-function RequestForm() {
+function RequestForm({ navigation }) {
   const [loanCategory, setloanCategory] = useState("");
   const [loanType, setloanType] = useState("");
   const input = React.createRef();
@@ -35,10 +36,15 @@ function RequestForm() {
     { key: 1, value: "Business Loan" },
     { key: 2, value: "Personal Loan" },
   ];
+  const currency = [
+    { key: 1, value: "USD" },
+    { key: 2, value: "RWF" },
+  ];
   const [visible1, setVisible1] = useState(false);
   const toggleDialog1 = () => {
     setVisible1(!visible1);
   };
+  const [principal, setPrincipal] = React.useState(0);
   return (
     <View>
       <Text
@@ -71,14 +77,50 @@ function RequestForm() {
         arrowicon={<Icon name="arrow-drop-down" size={20} color="#000000" />}
         closeicon={<Icon name="arrow-drop-up" size={20} color="#000000" />}
       />
-      <Input
+      <Text style={styles.label}>Loan Amount </Text>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <TextInput
+          inputMode="numeric"
+          numberOfLines={1}
+          maxLength={30}
+          onChangeText={(value) => setPrincipal(value)}
+          value={principal}
+          style={{
+            width: 200,
+            padding: 5,
+            backgroundColor: "#ffffff",
+            borderWidth: 0.8,
+            borderRadius: 8,
+            borderColor: "#000000",
+            marginBottom: 15,
+          }}
+        />
+        <SelectList
+          placeholder="RWF"
+          defaultOption={2}
+          data={currency}
+          setSelected={setloanType}
+          dropdownStyles={{ backgroundColor: "white" }}
+          boxStyles={styles.dropdown}
+          inputStyles={{ fontSize: 16 }}
+          arrowicon={<Icon name="arrow-drop-down" size={20} color="#000000" />}
+          closeicon={<Icon name="arrow-drop-up" size={20} color="#000000" />}
+        />
+      </View>
+      {/* <Input
         placeholder="Loan Amount"
         keyboardAppearance="dark"
         inputMode="Numeric"
         shake
         inputContainerStyle={styles.input}
         containerStyle={styles.inputContainer}
-      />
+      /> */}
       <Sliders />
       <SliderRate />
       <RequestTable />

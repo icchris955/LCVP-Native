@@ -26,7 +26,7 @@ const SliderRate = () => {
         <Slider
           value={value}
           onValueChange={setValue}
-          maximumValue={30}
+          maximumValue={18}
           minimumValue={0}
           step={1}
           allowTouchTrack
